@@ -27,7 +27,7 @@ app.get('/contact(.html)?', (req, res) => {
 
 app.use('/luxuryVilla', require('./routes/luxuryVilla/luxury'));
 app.use('/apartment', require('./routes/apartment/apartment'));
-app.use('/modrenCondo', require('./routes/modernCondo/mC'));
+app.use('/modernCondo', require('./routes/modernCondo/mC'));
 app.use('/pentHouse', require('./routes/pentHouse/pentH'));
 app.use('/mPlace', require('./routes/mPlaceTrade/mPlaceT'));
 
