@@ -7,15 +7,19 @@ const path = require('path');
 const PORT = process.env.PORT || 3200;
 
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.urlencoded({extended: true}));
 
 app.get('^/$|/index(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 });
 
-/*app.get('/property-details(.html)?', (req, res) => {
-    res.sendFile(path.join(__dirname, 'property-details.html'))
+app.post('/contactUsData', (req, res) => {
+    const name = req.body.name;
+    const msg = req.body.message;
+    console.log(name);
+    console.log(msg);
+    res.sendFile(path.join(__dirname, 'contact.html'))
 });
-*/
 
 app.get('/marketPlace(.html)?', (req, res) => {
     res.sendFile(path.join(__dirname,'Properties','marketPlace.html'))
