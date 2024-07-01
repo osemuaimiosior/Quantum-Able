@@ -14,10 +14,9 @@ app.get('^/$|/index(.html)?', (req, res) => {
 });
 
 app.post('/contactUsData', (req, res) => {
-    const name = req.body.name;
-    const msg = req.body.message;
+    const { name, email, subject, message } = req.body;
     console.log(name);
-    console.log(msg);
+    console.log(message);
     res.sendFile(path.join(__dirname, 'contact.html'))
 });
 
